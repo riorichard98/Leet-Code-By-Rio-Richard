@@ -24,4 +24,5 @@ function longestCommonPrefix(strs) {
     return prefix
 }
 
+// changing the commit
 console.log(longestCommonPrefix(["dog", "racecar", "car"]));
