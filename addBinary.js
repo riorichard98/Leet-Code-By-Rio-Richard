@@ -25,6 +25,22 @@ function addBinary(a,b){
     return output
 }
 
+// faster solution
+function addBinary(a,b){
+    let output = ""
+    let carry = 0
+    let longest = a.length >= b.length ? a.length : b.length
+    for(let i = 0 ; i < longest ;i++){
+        let int1 = a[a.length - 1 - i] !== undefined ? parseInt(a[a.length - 1 - i]) : 0
+        let int2 = b[b.length - 1 - i] !== undefined ? parseInt(b[b.length - 1 - i]) : 0
+        output = (int1+int2+carry)%2 + output
+        carry = Math.floor((int1+int2+carry)/2)
+    }
+    if(carry === 1){
+        output = "1" + output 
+    }
+    return output
+}
 // console.log(addBinary('11','1'));
 console.log(addBinary('0','0'));
 
