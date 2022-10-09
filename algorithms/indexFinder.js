@@ -1,6 +1,6 @@
 // using binary search find the match index
 
-function binarySearch(sortedArr,target){
+function indexFinder(sortedArr,target){
     let left = 0 ;
     let right = sortedArr.length - 1 ;
     let mid
@@ -12,14 +12,14 @@ function binarySearch(sortedArr,target){
         }else if(target > sortedArr[mid]){
             left = mid + 1
         }else if(target < sortedArr[mid]){
-            right = mid - 1
+            right = mid 
         }
     }
 
     return target > sortedArr[right] ? right + 1 : right
 }
 
-console.log(binarySearch([1,3,4,5],2));
-console.log(binarySearch([1,2,3,5],4));
-console.log(binarySearch([1,2,4,5],3));
-console.log(binarySearch([1,3,5,6],5));
+console.log(indexFinder([1,3,4,5],2));
+console.log(indexFinder([1,2,3,5],4));
+console.log(indexFinder([1,2,4,5],3)); //
+console.log(indexFinder([1,3,5,6],5));
