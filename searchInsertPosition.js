@@ -1,26 +1,21 @@
 function searchInsert(nums,target){
-    let minIndex = 0
-    let maxIndex = nums.length - 1
-    let medianIndex
-    while(maxIndex - minIndex > 2){
-        medianIndex = Math.floor((maxIndex+minIndex)/2)
-        if(target <= nums[medianIndex]){
-            maxIndex = medianIndex
-        }else if(target >= nums[medianIndex]){
-            minIndex = medianIndex
+    let left = 0 ;
+    let right = nums.length - 1 ;
+    let mid
+
+    while(left < right){
+        mid = Math.floor((left+right)/2)
+        if(target === nums[mid]){
+            return mid
+        }
+        else if(target > nums[mid]){
+            left = mid + 1
+        }else if(target <= nums[mid]){
+            right = mid 
         }
     }
-    console.log(minIndex,medianIndex,maxIndex);
-    if(target <= nums[minIndex] && target < nums[medianIndex]){
-        return minIndex
-    }
-    if(target <= nums[medianIndex] && target < nums[maxIndex]){
-        return medianIndex
-    }
-    if(target <= nums[maxIndex]){
-        return maxIndex
-    }
-    return nums.length
+
+    return target > nums[right] ? right + 1 : right
 }
 
-console.log(searchInsert([1,3,5,6],5));
+console.log(searchInsert([1,3,5,6],7));
