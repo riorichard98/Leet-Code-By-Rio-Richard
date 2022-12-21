@@ -1,20 +1,16 @@
-// let array = ['a','b','c','d','e']
-
-// for(let i = 0 ; i < array.length ; i++){
-//     // for(let k = i ; k >= 0 ; k--){
-//     //     array.push(array[i]+array[k])
-//     // }
-//     // for(let j = i + 1 ; j < array.length ; j++){
-//     //     array.push(array[i]+array[j])
-//     // }
-//     console.log(array[i]);
-// }
-
-// console.log(array);
-
-function arrCheck(){
-    const arr = [1,2,3,4]
-    console.log(arr[1].left);
+function getRow(rowIndex){
+    const output = [1]
+    for(let i = 0 ; i < rowIndex ; i++){
+        for(let k = 0 ; k < output.length - 1 ; k++){
+            output[k] = output[k] + output[k+1]
+        }
+        output.unshift(1)
+    }
+    return output
 }
 
-arrCheck()
+console.log(getRow(0));
+console.log(getRow(1));
+console.log(getRow(2));
+console.log(getRow(3));
+console.log(getRow(4));
