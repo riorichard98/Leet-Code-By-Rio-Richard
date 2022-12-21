@@ -1,13 +1,20 @@
-let array = ['a','b','c','d','e']
+// let array = ['a','b','c','d','e']
 
-for(let i = 0 ; i < array.length ; i++){
-    // for(let k = i ; k >= 0 ; k--){
-    //     array.push(array[i]+array[k])
-    // }
-    // for(let j = i + 1 ; j < array.length ; j++){
-    //     array.push(array[i]+array[j])
-    // }
-    console.log(array[i]);
+// for(let i = 0 ; i < array.length ; i++){
+//     // for(let k = i ; k >= 0 ; k--){
+//     //     array.push(array[i]+array[k])
+//     // }
+//     // for(let j = i + 1 ; j < array.length ; j++){
+//     //     array.push(array[i]+array[j])
+//     // }
+//     console.log(array[i]);
+// }
+
+// console.log(array);
+
+function arrCheck(){
+    const arr = [1,2,3,4]
+    console.log(arr[1].left);
 }
 
-console.log(array);
+arrCheck()

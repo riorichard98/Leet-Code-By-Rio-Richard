@@ -1,16 +1,15 @@
 function mySqrt(x){
-    let i = 0
-    let found = false
-    let output
-    while(!found){
-        if(i*i <= x){
-            output = i
-        }else if(i*i > x){
-            found = true
+    let left = 0
+    let right = x
+    while(left != right){
+        let mid = Math.ceil((left + right)/2)
+        if(x < (mid*mid)){
+            right = mid - 1
+        }else {
+            left = mid 
         }
-        i++
     }
-    return output
+    return right
 }
 
-console.log(mySqrt(4));
+console.log(mySqrt(121));
